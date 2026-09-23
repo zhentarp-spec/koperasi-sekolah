@@ -1,1 +1,460 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Koperasi Sekolah</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                🏫 KoperasiKu
+            </div>
+
+            <div class="nav-menu">
+                <a href="#beranda">Beranda</a>
+                <a href="#produk">Produk</a>
+                <a href="#pesanan">Pesanan</a>
+            </div>
+
+            <button class="cart-button" onclick="bukaKeranjang()">
+                🛒
+                <span id="jumlahKeranjang">0</span>
+            </button>
+
+        </nav>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="beranda">
+
+        <div class="hero-text">
+
+            <p class="label">KOPERASI SEKOLAH</p>
+
+            <h1>
+                Belanja Kebutuhan
+                <span>Sekolah</span>
+                Lebih Mudah
+            </h1>
+
+            <p>
+                Pesan alat tulis, minuman, makanan ringan,
+                dan makanan berat melalui HP dengan mudah.
+            </p>
+
+            <a href="#produk" class="hero-button">
+                Lihat Produk
+            </a>
+
+        </div>
+
+        <div class="hero-icon">
+            🛍️
+        </div>
+
+    </section>
+
+
+    <!-- PRODUK -->
+    <section class="produk-section" id="produk">
+
+        <div class="section-title">
+            <p>PRODUK KOPERASI</p>
+            <h2>Pilih Kebutuhanmu</h2>
+        </div>
+
+
+        <!-- KATEGORI -->
+        <div class="kategori">
+
+            <button onclick="filterProduk('semua')" class="active">
+                Semua
+            </button>
+
+            <button onclick="filterProduk('alat-tulis')">
+                Alat Tulis
+            </button>
+
+            <button onclick="filterProduk('minuman')">
+                Minuman
+            </button>
+
+            <button onclick="filterProduk('makanan')">
+                Makanan
+            </button>
+
+        </div>
+
+
+        <!-- DAFTAR PRODUK -->
+        <div class="produk-container">
+
+
+            <!-- PENGGARIS -->
+            <div class="produk-card" data-kategori="alat-tulis">
+
+                <div class="gambar-produk">
+                    <img src="images/penggaris.webp"
+                         alt="Penggaris">
+                </div>
+
+                <div class="produk-info">
+
+                    <span>Alat Tulis</span>
+
+                    <h3>Penggaris</h3>
+
+                    <p class="harga">
+                        Rp5.000
+                    </p>
+
+                    <button onclick="tambahKeranjang(
+                        'Penggaris',
+                        5000,
+                        'images/penggaris.jpg'
+                    )">
+                        + Tambah
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PULPEN -->
+            <div class="produk-card" data-kategori="alat-tulis">
+
+                <div class="gambar-produk">
+                    <img src="images/pulpen.jpg"
+                         alt="Pulpen">
+                </div>
+
+                <div class="produk-info">
+
+                    <span>Alat Tulis</span>
+
+                    <h3>Pulpen</h3>
+
+                    <p class="harga">
+                        Rp3.000
+                    </p>
+
+                    <button onclick="tambahKeranjang(
+                        'Pulpen',
+                        3000,
+                        'images/pulpen.jpg'
+                    )">
+                        + Tambah
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PENGHAPUS -->
+            <div class="produk-card" data-kategori="alat-tulis">
+
+                <div class="gambar-produk">
+                    <img src="images/penghapus.jpeg"
+                         alt="Penghapus">
+                </div>
+                <div class="produk-info">
+
+                    <span>Alat Tulis</span>
+
+                    <h3>Penghapus</h3>
+
+                    <p class="harga">
+                        Rp2.000
+                    </p>
+
+                    <button onclick="tambahKeranjang(
+                        'Penghapus',
+                        2000,
+                        'images/penghapus.jpg'
+                    )">
+                        + Tambah
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- BUKU -->
+            <div class="produk-card" data-kategori="alat-tulis">
+
+                <div class="gambar-produk">
+                    <img src="images/buku tulis.jpg"
+                         alt="Buku">
+                </div>
+
+                <div class="produk-info">
+
+                    <span>Alat Tulis</span>
+
+                    <h3>Buku Tulis</h3>
+
+                    <p class="harga">
+                        Rp5.000
+                    </p>
+
+                    <button onclick="tambahKeranjang(
+                        'Buku Tulis',
+                        5000,
+                        'images/buku.jpg'
+                    )">
+                        + Tambah
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PENSIL -->
+            <div class="produk-card" data-kategori="alat-tulis">
+
+                <div class="gambar-produk">
+                    <img src="images/pensil.jpg"
+                         alt="Pensil">
+                </div>
+
+                <div class="produk-info">
+
+                    <span>Alat Tulis</span>
+
+                    <h3>Pensil</h3>
+
+                    <p class="harga">
+                        Rp2.500
+                    </p>
+
+                    <button onclick="tambahKeranjang(
+                        'Pensil',
+                        2500,
+                        'images/pensil.jpg'
+                    )">
+                        + Tambah
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- AIR -->
+            <div class="produk-card" data-kategori="minuman">
+
+                <div class="gambar-produk">
+                    <img src="images/air putih.jpg"
+                         alt="Air putih">
+                </div>
+
+                <div class="produk-info">
+
+                    <span>Minuman</span>
+
+                    <h3>Air Putih</h3>
+
+                    <p class="harga">
+                        Rp3.000
+                    </p>
+
+                    <button onclick="tambahKeranjang(
+                        'Air Putih',
+                        3000,
+                        'images/air.jpg'
+                    )">
+                        + Tambah
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- SNACK -->
+            <div class="produk-card" data-kategori="makanan">
+
+                <div class="gambar-produk">
+                    <img src="images/makanan ringan.jpg"
+                         alt="Makanan ringan">
+                </div>
+
+                <div class="produk-info">
+
+                    <span>Makanan</span>
+
+                    <h3>Makanan Ringan</h3>
+
+                    <p class="harga">
+                        Rp5.000
+                    </p>
+
+                    <button onclick="tambahKeranjang(
+                        'Makanan Ringan',
+                        5000,
+                        'images/snack.jpg'
+                    )">
+                        + Tambah
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- MAKANAN BERAT -->
+            <div class="produk-card" data-kategori="makanan">
+
+                <div class="gambar-produk">
+                    <img src="images/makanan berat.jpg"
+                         alt="Makanan berat">
+                </div>
+
+                <div class="produk-info">
+
+                    <span>Makanan</span>
+
+                    <h3>Makanan Berat</h3>
+
+                    <p class="harga">
+                        Rp10.000
+                    </p>
+
+                    <button onclick="tambahKeranjang(
+                        'Makanan Berat',
+                        10000,
+                        'images/makanan.jpg'
+                    )">
+                        + Tambah
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PESANAN -->
+    <section class="pesanan-section" id="pesanan">
+
+        <div class="section-title">
+            <p>PEMESANAN</p>
+            <h2>Data Pemesan</h2>
+        </div>
+
+        <div class="form-container">
+
+            <label>Nama Siswa</label>
+
+            <input
+                type="text"
+                id="nama"
+                placeholder="Masukkan nama lengkap"
+            >
+
+
+            <label>Kelas</label>
+
+            <input
+                type="text"
+                id="kelas"
+                placeholder="Contoh: XI PPLG 1"
+            >
+
+
+            <label>Catatan</label>
+
+            <textarea
+                id="catatan"
+                placeholder="Contoh: Tolong siapkan saat istirahat"
+            ></textarea>
+
+
+            <button
+                class="pesan-button"
+                onclick="kirimPesanan()"
+            >
+                📱 Pesan Sekarang
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h3>🏫 KoperasiKu</h3>
+
+        <p>
+            Koperasi sekolah yang memudahkan siswa
+            membeli kebutuhan sekolah.
+        </p>
+
+        <p>
+            © 2026 KoperasiKu
+        </p>
+
+    </footer>
+
+
+    <!-- MODAL KERANJANG -->
+    <div id="modalKeranjang" class="modal">
+
+        <div class="modal-content">
+
+            <button
+                class="close"
+                onclick="tutupKeranjang()"
+            >
+                ×
+            </button>
+
+            <h2>🛒 Keranjang Saya</h2>
+
+            <div id="isiKeranjang"></div>
+
+            <div class="total">
+
+                <span>Total</span>
+
+                <strong id="totalHarga">
+                    Rp0
+                </strong>
+
+            </div>
+
+            <button
+                class="lanjut-button"
+                onclick="kePesanan()"
+            >
+                Lanjut Pesanan
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
